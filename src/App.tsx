@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Board } from "./components/general/Board";
 
 const App = () => {
