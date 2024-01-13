@@ -30,7 +30,7 @@ export const Board = () => {
   const [selectedPiece, setSelectedPiece] = useState<Square | null>(null);
   const [piecePosition, setPiecePosition] = useState({ x: 0, y: 0 });
 
-  const onPieceClick = (square: Square) => {
+  const onPieceClick = (event: any, square: Square) => {
     if (selectedPiece !== null) {
       setSelectedPiece(null);
 
@@ -57,18 +57,19 @@ export const Board = () => {
       setPiecePosition({ x: 5000, y: 5000 });
     } else {
       setSelectedPiece(square);
+      setPiecePosition({ x: event.clientX - 20, y: event.clientY - 20 });
     }
   };
 
   const onPieceDrag = (event: any) => {
     if (selectedPiece !== null) {
-      setPiecePosition({ x: event.clientX, y: event.clientY });
+      setPiecePosition({ x: event.clientX - 20, y: event.clientY - 20 });
     }
   };
 
   return (
     <div
-      className="flex justify-center items-center  w-[512px] sm:w-[256px] flex-wrap"
+      className="flex justify-center items-center  w-[256px] lg:w-[1024px]  flex-wrap"
       onMouseMove={onPieceDrag}
     >
       {board.map((square, index) => {

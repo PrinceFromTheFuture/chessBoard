@@ -18,23 +18,23 @@ export const SquareComponent = ({
   return (
     <div>
       <div
-        className={` w-[64px] h-[64px] sm:w-[32px] sm:h-[32px] flex justify-center items-center `}
-        onClick={() => onPieceClick(square)}
+        className={` w-[32px] h-[32px] lg:w-[128px] lg:h-[128px]  flex justify-center items-center `}
+        onClick={(event) => onPieceClick(event, square)}
         style={{ backgroundColor: `#${background}` }}
       >
         {selectedPiece === square && (
           <div
             className="absolute pointer-events-none "
             style={{
-              top: `${piecePosition.y - 40}px`,
-              left: `${piecePosition.x - 40}px`,
+              top: `${piecePosition.y}px`,
+              left: `${piecePosition.x}px`,
               transition: "ease 0.01s",
             }}
           >
             <img
               src={`${square.Piece}.png`}
               alt=""
-              className=" select-none drag-none  w-20"
+              className=" select-none drag-none  w-14 lg:w-52 "
               draggable={false}
             />
           </div>
@@ -44,7 +44,7 @@ export const SquareComponent = ({
             <img
               src={`${square.Piece}.png`}
               alt=""
-              className=" select-none drag-none  w-20"
+              className=" select-none drag-none "
               draggable={false}
             />
           </div>
