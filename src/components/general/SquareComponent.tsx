@@ -19,7 +19,6 @@ export const SquareComponent = ({
     <div>
       <div
         className={` w-[32px] h-[32px] lg:w-[128px] lg:h-[128px]  flex justify-center items-center `}
-        onClick={(event) => onPieceClick(event, square)}
         style={{ backgroundColor: `#${background}` }}
       >
         {selectedPiece === square && square.Piece !== undefined && (
@@ -30,6 +29,7 @@ export const SquareComponent = ({
               left: `${piecePosition.x}px`,
               transition: "ease 0.01s",
             }}
+            onClick={(event) => onPieceClick(event, square)}
           >
             <img
               src={`${square.Piece}.png`}
@@ -40,7 +40,7 @@ export const SquareComponent = ({
           </div>
         )}
         {selectedPiece !== square && square.Piece !== undefined && (
-          <div>
+          <div onClick={(event) => onPieceClick(event, square)}>
             <img
               src={`${square.Piece}.png`}
               alt=""
