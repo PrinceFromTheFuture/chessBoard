@@ -62,9 +62,11 @@ export const Board = () => {
   };
 
   const onPieceDrag = (event: any) => {
-    if (selectedPiece !== null) {
-      setPiecePosition({ x: event.clientX - 20, y: event.clientY - 20 });
-    }
+    setTimeout(() => {
+      if (selectedPiece !== null) {
+        setPiecePosition({ x: event.clientX - 20, y: event.clientY - 20 });
+      }
+    }, 30);
   };
 
   return (

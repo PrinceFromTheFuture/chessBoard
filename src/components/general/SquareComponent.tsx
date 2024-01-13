@@ -22,9 +22,9 @@ export const SquareComponent = ({
         onClick={(event) => onPieceClick(event, square)}
         style={{ backgroundColor: `#${background}` }}
       >
-        {selectedPiece === square && (
+        {selectedPiece === square && square.Piece !== undefined && (
           <div
-            className="absolute pointer-events-none "
+            className="absolute pointer-events-none transition-all ease  "
             style={{
               top: `${piecePosition.y}px`,
               left: `${piecePosition.x}px`,
@@ -39,7 +39,7 @@ export const SquareComponent = ({
             />
           </div>
         )}
-        {selectedPiece !== square && (
+        {selectedPiece !== square && square.Piece !== undefined && (
           <div>
             <img
               src={`${square.Piece}.png`}
