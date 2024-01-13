@@ -18,12 +18,13 @@ export const SquareComponent = ({
   return (
     <div>
       <div
-        className={`bg-[#${background}] w-[64px] h-[64px] flex justify-center items-center `}
+        className={` w-[64px] h-[64px] sm:w-[32px] sm:h-[32px] flex justify-center items-center `}
         onClick={() => onPieceClick(square)}
+        style={{ backgroundColor: `#${background}` }}
       >
         {selectedPiece === square && (
           <div
-            className="absolute pointer-events-none"
+            className="absolute pointer-events-none "
             style={{
               top: `${piecePosition.y - 40}px`,
               left: `${piecePosition.x - 40}px`,

@@ -68,7 +68,7 @@ export const Board = () => {
 
   return (
     <div
-      className="flex justify-center items-center  w-[512px] flex-wrap"
+      className="flex justify-center items-center  w-[512px] sm:w-[256px] flex-wrap"
       onMouseMove={onPieceDrag}
     >
       {board.map((square, index) => {
